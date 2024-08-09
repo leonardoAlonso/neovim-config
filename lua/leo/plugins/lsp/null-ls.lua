@@ -25,6 +25,7 @@ null_ls.setup({
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 			end,
 		}),
+		diagnostics.mypy, -- python type checker
 		diagnostics.ruff,
 	},
 	-- configure format on save

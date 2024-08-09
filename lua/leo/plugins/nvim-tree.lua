@@ -8,28 +8,45 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.g.nvim_tree_icons = {
-	default = "",
-	symlink = "",
-	git = {
-		unstaged = "✗",
-		staged = "✓",
-		unmerged = "",
-		renamed = "➜",
-		untracked = "U",
-		deleted = "",
-	},
-	folder = {
-		default = "",
-		open = "",
-	},
-}
-
 nvimtree.setup({
+	filters = {
+		dotfiles = false,
+		custom = { "node_modules" },
+		exclude = {},
+	},
+	view = {
+		width = 30,
+		side = "left",
+	},
+	git = {
+		ignore = false,
+	},
 	actions = {
 		open_file = {
-			window_picker = {
-				enable = false,
+			quit_on_open = true,
+		},
+	},
+	renderer = {
+		icons = {
+			glyphs = {
+				default = "",
+				symlink = "",
+				git = {
+					unstaged = "",
+					staged = "✓",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "U",
+					deleted = "",
+					ignored = "◌",
+				},
+				folder = {
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+				},
 			},
 		},
 	},

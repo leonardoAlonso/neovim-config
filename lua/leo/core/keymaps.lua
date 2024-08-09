@@ -54,7 +54,12 @@ keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>") -- go to buffer 2
 keymap.set("n", "<leader>]", ":BufferLineCycleNext<CR>") -- go to next buffer
 -- previous buffer
 keymap.set("n", "<leader>[", ":BufferLineCyclePrev<CR>") -- go to previous buffer
--- close buffer
-keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>") -- close buffer
+-- pick buffer to close
+keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>") -- pick buffer to close
+
 -- pick buffer
 keymap.set("n", "<leader>bp", ":BufferLinePick<CR>") -- pick buffer
+
+-- movelines
+keymap.set("n", "<A-j>", ":m .-2<CR>==") -- move line down
+keymap.set("n", "<A-k>", ":m .+1<CR>==") -- move line up

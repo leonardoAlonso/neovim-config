@@ -70,17 +70,10 @@ lspconfig["emmet_ls"].setup({
 
 --configure ruff
 
--- lspconfig["ruff"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- })
-
-lspconfig["ruff_lsp"].setup({
+lspconfig.pyright.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	init_options = {
-		args = {},
-	},
+	filetypes = { "python" },
 })
 
 -- configure jedi_language_server
