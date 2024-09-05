@@ -12,7 +12,9 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
+opt.linebreak = true
+opt.showbreak = "↪"
 
 -- search settings
 opt.ignorecase = true
@@ -23,18 +25,19 @@ opt.cursorline = true
 
 -- apprerenace
 opt.termguicolors = true
-opt.background = 'dark'
-opt.signcolumn = 'yes'
+opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- backspace
-opt.backspace = 'indent,eol,start'
+opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append('unnamedplus')
+opt.clipboard:append("unnamedplus")
 
 -- split windows
 opt.splitbelow = true
 opt.splitright = true
 
-
-opt.iskeyword:append('-')
+opt.iskeyword:append("-")
+opt.foldmethod = "indent"
+opt.foldcolumn = "1"

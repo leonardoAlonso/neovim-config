@@ -30,7 +30,9 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle!<CR>") -- maximize current window
 
 -- nvim tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle nvim tree
+keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle nvim tree
+keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>") -- refresh nvim tree
+keymap.set("n", "<leader>ef", ":NvimTreeFindFileToggle<CR>") -- find file in nvim tree
 
 -- telescope
 -- telescope
@@ -61,5 +63,7 @@ keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>") -- pick buffer to clos
 keymap.set("n", "<leader>bp", ":BufferLinePick<CR>") -- pick buffer
 
 -- movelines
-keymap.set("n", "<A-j>", ":m .-2<CR>==") -- move line down
-keymap.set("n", "<A-k>", ":m .+1<CR>==") -- move line up
+keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down
+keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line down
+
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>") -- open lazygit

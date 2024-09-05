@@ -33,7 +33,9 @@ mason_lspconfig.setup({
 		"gopls",
 		"pyright",
 		"ruff",
-		"jedi_language_server",
+		"rust_analyzer",
+		"yamlls",
+		"jsonls",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed

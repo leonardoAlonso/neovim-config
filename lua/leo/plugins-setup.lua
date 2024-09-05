@@ -34,14 +34,22 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-	use("arcticicestudio/nord-vim") -- preferred colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- preferred colorscheme
 
 	-- tmux & split window navigator
 	use("christoomey/vim-tmux-navigator") -- navigate between tmux panes and vim splits
 	use("szw/vim-maximizer") -- maximize splits  (use :MaximizerToggle)
 
 	-- essential plugins
-	use("tpope/vim-surround") -- surround text objects with brackets, quotes, etc
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 	use("vim-scripts/ReplaceWithRegister") -- replace text with register content (use gr)
 
 	-- coment with gc
@@ -114,6 +122,15 @@ return packer.startup(function(use)
 	use("ChristianChiarulli/swenv.nvim") -- switch between virtual environments
 
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+
+	-- nvim v0.7.2
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()

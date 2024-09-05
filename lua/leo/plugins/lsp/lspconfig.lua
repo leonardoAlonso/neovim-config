@@ -30,6 +30,8 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
+	-- format code
+	keymap.set("n", "<leader>fmt", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -79,6 +81,12 @@ lspconfig.pyright.setup({
 -- configure jedi_language_server
 
 lspconfig["jedi_language_server"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- configure go language server
+lspconfig.gopls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

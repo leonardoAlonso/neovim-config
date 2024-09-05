@@ -5,7 +5,7 @@ if not status then
 end
 
 -- get lualine nightfly theme
-local lualine_theme = require("lualine.themes.nord")
+local lualine_theme = require("lualine.themes.palenight")
 
 -- configure lualine with modified theme
 lualine.setup({
