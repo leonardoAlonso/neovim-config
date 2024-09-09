@@ -123,6 +123,14 @@ return packer.startup(function(use)
 
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
+	use({
+		"MeanderingProgrammer/render-markdown.nvim",
+		after = { "nvim-treesitter" },
+		requires = {
+			{ "nvim-tree/nvim-web-devicons", opt = true },
+		},
+	})
+
 	-- nvim v0.7.2
 	use({
 		"kdheepak/lazygit.nvim",

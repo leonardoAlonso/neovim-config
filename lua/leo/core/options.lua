@@ -39,5 +39,5 @@ opt.splitbelow = true
 opt.splitright = true
 
 opt.iskeyword:append("-")
-opt.foldmethod = "indent"
-opt.foldcolumn = "1"
+-- opt.foldmethod = "indent"
+-- opt.foldcolumn = "1"
