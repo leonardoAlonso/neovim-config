@@ -119,10 +119,6 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-	use("ChristianChiarulli/swenv.nvim") -- switch between virtual environments
-
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
-
 	use({
 		"MeanderingProgrammer/render-markdown.nvim",
 		after = { "nvim-treesitter" },
@@ -131,14 +127,37 @@ return packer.startup(function(use)
 		},
 	})
 
-	-- nvim v0.7.2
+	use("romgrk/barbar.nvim") -- tabline
 	use({
-		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
+		"folke/todo-comments.nvim",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
+	}) -- comment toggler
+
+	-- nvim v0.7.2
+	-- use({
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	-- optional for floating window border decoration
+	-- 	requires = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- })
+	use({
+		"NeogitOrg/neogit",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "sindrets/diffview.nvim" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
 	})
+	use({
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+
+	use({ "ChristianChiarulli/swenv.nvim", requires = { "nvim-lua/plenary.nvim" } }) -- switch between virtual environments
 
 	if packer_bootstrap then
 		require("packer").sync()

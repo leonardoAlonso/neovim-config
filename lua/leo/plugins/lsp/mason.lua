@@ -23,7 +23,7 @@ mason.setup()
 mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
-		"tsserver",
+		"ts_ls",
 		"html",
 		"cssls",
 		"tailwindcss",
@@ -36,6 +36,9 @@ mason_lspconfig.setup({
 		"rust_analyzer",
 		"yamlls",
 		"jsonls",
+		"grammarly",
+		"ltex",
+		"remark_ls",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -49,6 +52,7 @@ mason_null_ls.setup({
 		"eslint_d", -- ts/js linter
 		"black", -- python formatter
 		"mypy", -- python type checker
+		"ruff",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

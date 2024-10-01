@@ -14,6 +14,9 @@ swenv.setup({
 	venvs_path = vim.fn.expand("/opt/miniconda3/envs/"),
 	-- Something to do after setting an environment, for example call vim.cmd.LspRestart
 	post_set_venv = nil,
+	sections = {
+		lualine_a = "swenv", -- uses default options
+	},
 })
 
 vim.api.nvim_set_keymap(

@@ -20,9 +20,9 @@ null_ls.setup({
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.black, -- python formatter
-    formatting.gofumpt, -- go formatter
+		formatting.gofumpt, -- go formatter
 		formatting.goimports_reviser, -- go imports formatter
-    formatting.golines, -- go formatter
+		formatting.golines, -- go formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
@@ -31,6 +31,7 @@ null_ls.setup({
 		}),
 		diagnostics.mypy, -- python type checker
 		diagnostics.ruff,
+		diagnostics.markdownlint_cli2, -- markdown linter
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

@@ -4,7 +4,7 @@ local keymap = vim.keymap
 -- general
 --
 keymap.set("i", "jk", "<Esc>", { noremap = true }) -- jk to escape in insert mode
-keymap.set("n", "<leader>nh", "nohl<CR>") -- clear highlights
+keymap.set("n", "<leader>nh", "<cmd>noh<CR>") -- clear highlights
 keymap.set("n", "x", '"_x') -- don't yank to register when deleting
 keymap.set("n", "<leader>+", "<C-a>") -- increment number under cursor
 keymap.set("n", "<leader>-", "<C-x>") -- decrement number under cursor
@@ -48,22 +48,22 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- bufferline
-
-keymap.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>") -- go to buffer 1
-keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>") -- go to buffer 2
--- next buffer
-keymap.set("n", "<leader>]", ":BufferLineCycleNext<CR>") -- go to next buffer
--- previous buffer
-keymap.set("n", "<leader>[", ":BufferLineCyclePrev<CR>") -- go to previous buffer
--- pick buffer to close
-keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>") -- pick buffer to close
-
--- pick buffer
-keymap.set("n", "<leader>bp", ":BufferLinePick<CR>") -- pick buffer
-
 -- movelines
 keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down
 keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line down
 
-keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>") -- open lazygit
+keymap.set("n", "<leader>lg", "<cmd>Neogit<cr>") -- open lazygit
+
+-- barbar
+--
+local opts = { noremap = true, silent = true }
+keymap.set("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
+keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
+keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
+keymap.set("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
+keymap.set("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
+keymap.set("n", "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
+keymap.set("n", "<leader>bn", "<Cmd>BufferOrderByName<CR>", opts)
+keymap.set("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
+keymap.set("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
+keymap.set("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
