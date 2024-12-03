@@ -14,7 +14,7 @@ keymap.set("n", "<leader>w", ":w<CR>") -- save file
 -- split windows
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window horizontally
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window vertically
-keymap.set("n", "<leader>se", "<C-w>=") -- equalize window sizes
+keymap.set("n", "<leader>seq", "<C-w>=") -- equalize window sizes
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split windo
 
 -- tabs
@@ -23,8 +23,10 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
--- plugin keymaps
---
+-- plugin terminal
+
+keymap.set("n", "<leader>tt", ":ToggleTerm<CR>") -- toggle terminal
+
 -- vim maximazer
 
 keymap.set("n", "<leader>sm", ":MaximizerToggle!<CR>") -- maximize current window
@@ -67,3 +69,10 @@ keymap.set("n", "<leader>bn", "<Cmd>BufferOrderByName<CR>", opts)
 keymap.set("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
 keymap.set("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 keymap.set("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
+
+-- which key
+keymap.set("n", "<leader>?", "<Cmd>WhichKey<CR>", opts)
+
+-- blame
+--
+keymap.set("n", "<leader>gb", "<Cmd>BlameToggle virtual<CR>", opts)

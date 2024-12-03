@@ -34,7 +34,11 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" }) -- preferred colorscheme
+	-- use({ "catppuccin/nvim", as = "catppuccin" }) -- preferred colorscheme
+
+	use("rebelot/kanagawa.nvim")
+
+	-- use("folke/tokyonight.nvim") -- preferred colorscheme
 
 	-- tmux & split window navigator
 	use("christoomey/vim-tmux-navigator") -- navigate between tmux panes and vim splits
@@ -112,6 +116,12 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
+
 	-- auto closing
 	-- use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
@@ -158,6 +168,30 @@ return packer.startup(function(use)
 	})
 
 	use({ "ChristianChiarulli/swenv.nvim", requires = { "nvim-lua/plenary.nvim" } }) -- switch between virtual environments
+
+	use({
+		"folke/which-key.nvim",
+	}) -- keybindings helper
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
+
+	use({
+		"tpope/vim-fugitive",
+	})
+
+	use({
+		"FabijanZulj/blame.nvim",
+		lazy = false,
+		config = function()
+			require("blame").setup({})
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()

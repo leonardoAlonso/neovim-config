@@ -19,7 +19,7 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
-		formatting.black, -- python formatter
+		formatting.ruff, -- python formatter
 		formatting.gofumpt, -- go formatter
 		formatting.goimports_reviser, -- go imports formatter
 		formatting.golines, -- go formatter
